@@ -92,7 +92,7 @@ void receiveEvent(int howmany) //howmany = Wire.write()executed by Master
   }
   returnData[3] = '\0';
   
-  for (int i = 4; i > 1; i--) {
+  for (int i = 3; i > 0; i--) {
     intData += (digitsPlace*incomingData[i]);
     digitsPlace *= 10;
   }

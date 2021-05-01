@@ -1,3 +1,5 @@
+
+
 #include<Arduino.h>
 #include<Wire.h>
 #include<Servo.h>
@@ -12,7 +14,7 @@
 #define MOTOR_STEP_PIN 9
 #define MOTOR_DIRECTION_PIN 10
 #define PAYLOAD_SIZE 11
-#define NODE_ADDRESS 0x50   // Change this unique address for each I2C slave node
+#define NODE_ADDRESS 0x51   // Change this unique address for each I2C slave node
 
 // Talon front right and back right
 Servo talonFR;
@@ -116,7 +118,7 @@ void receiveEvent(int howmany) //howmany = Wire.write()executed by Master
   }
   returnData[3] = '\0';
   
-  for (int i = 4; i > 1; i--) {
+  for (int i = 3; i > 0; i--) {
     intData += (digitsPlace*incomingData[i]);
     digitsPlace *= 10;
   }
