@@ -1,4 +1,7 @@
-
+/* This teensy controlls the tank drive based upon the input 
+ * from the joysticks on the xbox controller
+ * The trigger also controlls the dump and translating belt
+ */
 
 #include<Arduino.h>
 #include<Wire.h>
@@ -98,9 +101,8 @@ void loop()
 void receiveEvent(int howmany) //howmany = Wire.write()executed by Master
 {
   /*
-   * Offest sent from jetson incomingData[0]
-   * ID integer on incomingData[1]
-   * [2-4] actual integer data
+   * ID integer on incomingData[0]
+   * [1-3] actual integer data
    */
 
   

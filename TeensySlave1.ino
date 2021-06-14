@@ -66,16 +66,13 @@ void loop()
   //talonFL.write(talonValueL);
   //talonBL.write(talonValueL);
   
-  //Serial.printlnz("test");
 }
 
 void receiveEvent(int howmany) //howmany = Wire.write()executed by Master
 {
   /*
-   * Offest sent from jetson incomingData[0]
-   * ID integer on incomingData[1]
-   * [2-4] actual integer data
-   * 
+   * ID integer on incomingData[0]
+   * [1-3] actual integer data
    */
    
   byte incomingData[5];

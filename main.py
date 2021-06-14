@@ -20,6 +20,7 @@ def writeNumber(value):
     return -1
 
 # Writes an integer array to specific address
+# This is a mess rn needs to be optmized
 def writeBlock(joyVal, deviceId, address):
     n = joyVal
     digit = 0
@@ -50,6 +51,7 @@ def readNumber():
 
 def callback(data):
     # Translates the axis data into a range depending on function
+    # Functions for tank drive and belt
     leftSide = translate(data.axes[4], -1.0, 1.0, 0, 180)
     rightSide = translate(data.axes[1], -1.0, 1.0, 0, 180)
     belt = translate(data.axes[5], -1.0, 1.0, 180, 90)
@@ -59,6 +61,7 @@ def callback(data):
     writeBlock(belt, 3, address2)
 
     # rotate away from digging pos X button
+    # device ID 1 
     if data.buttons[2] == 1:
         writeBlock(120, 1, address1)
     # rotate towards digging pos B button
